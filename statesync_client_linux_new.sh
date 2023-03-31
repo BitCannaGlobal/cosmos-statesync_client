@@ -19,7 +19,7 @@ FILE=$(which jq)
 set -e
 
 # Change for your custom chain
-BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.2/bcna_linux_amd64.tar.gz"
+BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.3/bcna_linux_amd64.tar.gz"
 GENESIS="https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
 APP="BCNA: ~/.bcna"
 echo "Welcome to the StateSync script. This script will download the last binary and it will sync the last state."
