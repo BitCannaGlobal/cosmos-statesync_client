@@ -53,11 +53,11 @@ then
   curl -s $GENESIS > $HOME/.bcna/config/genesis.json
   
  
-  NODE1_IP="176.9.139.74"
+  NODE1_IP="161.97.150.65"
   RPC1="http://$NODE1_IP"
-  P2P_PORT1=36656
-  RPC_PORT1=36657
-  
+  P2P_PORT1=26656
+  RPC_PORT1=26657
+
   NODE2_IP="95.216.242.82"
   RPC2="http://$NODE2_IP"
   RPC_PORT2=36657
