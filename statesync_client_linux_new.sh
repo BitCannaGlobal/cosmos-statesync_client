@@ -19,9 +19,9 @@ FILE=$(which jq)
 set -e
 
 # Change for your custom chain
-BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz"
+BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_linux_amd64.tar.gz"
 GENESIS="https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
-APP="BCNA: ~/.bcna"
+APP="~/.bcna"
 echo "Welcome to the StateSync script. This script will download the last binary and it will sync the last state."
 echo "DON'T USE WITH A EXISTENT peer/validator config will be erased."
 echo "You should have a crypted backup of your wallet keys, your node keys and your validator keys." 
@@ -37,8 +37,9 @@ then
   cd ~
   if [ -d ~/.bcna ];
   then
-    echo "There is a BCNA folder there... if you want sync the data in an existent peer/validator try the script: statesync_linux_existising.sh"
-    exit 1
+    echo "WARNING! Deleting the folder $APP in 10 seconds... press CTRL+C to abort..."
+    sleep 10
+    rm -rf $APP
   else
       echo "New installation...."
   fi
