@@ -19,7 +19,7 @@ FILE=$(which jq)
 set -e
 
 # Change for your custom chain
-BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2-rc2/bcna_darwin_arm64.tar.gz"
+BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0-rc3/bcna_darwin_arm64.tar.gz"
 GENESIS="https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json"
 APP="BCNA: ~/.bcna"
 echo ".....DEVNET-1 use only........"
