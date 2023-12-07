@@ -53,7 +53,7 @@ then
   rm -rf $HOME/.bcnad/config/genesis.json #deletes the default created genesis
   curl -s $GENESIS > $HOME/.bcna/config/genesis.json
   
-  NODE1_IP="212.227.151.143"
+  NODE1_IP="81.0.247.144"
   RPC1="http://$NODE1_IP"
   P2P_PORT1=26656
   RPC_PORT1=26657
@@ -107,6 +107,8 @@ then
   ./bcnad config chain-id bitcanna-dev-1
   ./bcnad start
   sed -E -i 's/enable = true/enable = false/' $HOME/.bcna/config/config.toml
+  sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml
+  sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
   echo ##################################################################  
   echo  Run again with: ./bcnad start
   echo ##################################################################
