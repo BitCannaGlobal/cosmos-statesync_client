@@ -19,7 +19,7 @@ FILE=$(which jq)
 set -e
 
 # Change for your custom chain
-BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_darwin_arm64.tar.gz"
+BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.3/bcna_darwin_arm64.tar.gz"
 GENESIS="https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
 APP="~/.bcna"
 echo "Welcome to the StateSync script. This script will download the last binary and it will sync the last state."
@@ -108,6 +108,8 @@ then
   sleep 5
   ./bcnad start
   sed -E -i 's/enable = true/enable = false/' $HOME/.bcna/config/config.toml
+  sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml
+  sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
   echo ##################################################################  
   echo  Run again with: ./bcnad start
   echo ##################################################################
