@@ -108,6 +108,8 @@ then
   sleep 5
   ./bcnad start
   sed -E -i 's/enable = true/enable = false/' $HOME/.bcna/config/config.toml
+  sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml
+  sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
   echo ##################################################################  
   echo  Run again with: ./bcnad start
   echo ##################################################################
