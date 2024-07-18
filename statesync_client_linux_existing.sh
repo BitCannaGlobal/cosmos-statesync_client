@@ -30,10 +30,10 @@ then
   echo "\nClearing the data folder & P2P Address Book"
   bcnad tendermint unsafe-reset-all --keep-addr-book --home $HOME/.bcna || cosmovisor tendermint unsafe-reset-all --keep-addr-book --home $HOME/.bcna
 
-  NODE1_IP="161.97.150.65"
+  NODE1_IP="95.216.242.82"
   RPC1="http://$NODE1_IP"
-  P2P_PORT1=26656
-  RPC_PORT1=26657
+  P2P_PORT1=36656
+  RPC_PORT1=36657
 
   NODE2_IP="95.216.242.82"
   RPC2="http://$NODE2_IP"
