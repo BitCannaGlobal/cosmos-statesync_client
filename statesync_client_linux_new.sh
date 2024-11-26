@@ -19,7 +19,7 @@ FILE=$(which jq)
 set -e
 
 # Change for your custom chain
-BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v3.1.0/bcna_linux_amd64.tar.gz"
+BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v4.0.1/bcnad_linux_amd64.tar.gz"
 GENESIS="https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
 APP="~/.bcna"
 echo "Welcome to the StateSync script. This script will download the last binary and it will sync the last state."
@@ -39,16 +39,16 @@ then
   then
     echo "WARNING! Deleting the folder $APP in 10 seconds... press CTRL+C to abort..."
     sleep 10
-    rm -rf $APP
+    rm -rf $HOME/.bcna
   else
       echo "New installation...."
   fi
   rm -f bcnad #deletes a previous downloaded binary
-  rm -f bcna_linux_amd64.tar.gz
+  rm -f bcnad_linux_amd64.tar.gz
   wget -nc $BINARY
-  tar zxvf bcna_linux_amd64.tar.gz
-  rm bcna_linux_amd64.tar.gz
-  chmod +x bcnad
+  tar zxvf bcnad_linux_amd64.tar.gz
+  rm bcnad_linux_amd64.tar.gz
+  mv bcnad_linux_amd64 bcnad
   ./bcnad init New_peer --chain-id bitcanna-1
   rm -rf $HOME/.bcnad/config/genesis.json #deletes the default created genesis
   curl -s $GENESIS > $HOME/.bcna/config/genesis.json
