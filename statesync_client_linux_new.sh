@@ -19,7 +19,7 @@ FILE=$(which jq)
 set -e
 
 # Change for your custom chain
-BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v4.0.1/bcnad_linux_amd64.tar.gz"
+BINARY="https://github.com/BitCannaGlobal/bcna/releases/download/v4.0.3/bcnad_linux_amd64.tar.gz"
 GENESIS="https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
 APP="~/.bcna"
 echo "Welcome to the StateSync script. This script will download the last binary and it will sync the last state."
@@ -54,15 +54,15 @@ then
   curl -s $GENESIS > $HOME/.bcna/config/genesis.json
   
  
-  NODE1_IP="95.216.242.82"
+  NODE1_IP="49.12.123.172"
   RPC1="http://$NODE1_IP"
-  P2P_PORT1=36656
-  RPC_PORT1=36657
+  P2P_PORT1=26656
+  RPC_PORT1=26657
   
-  NODE2_IP="95.216.242.82"
+  NODE2_IP="49.12.123.172"
   RPC2="http://$NODE2_IP"
-  RPC_PORT2=36657
-  P2P_PORT2=36656
+  RPC_PORT2=26657
+  P2P_PORT2=26656
 
   #If you want to use a third StateSync Server... 
   #DOMAIN_3=seed1.bitcanna.io     # If you want to use domain names 
