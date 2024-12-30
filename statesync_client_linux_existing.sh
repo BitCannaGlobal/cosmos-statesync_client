@@ -30,15 +30,15 @@ then
   echo "\nClearing the data folder & P2P Address Book"
   bcnad tendermint unsafe-reset-all --keep-addr-book --home $HOME/.bcna || cosmovisor tendermint unsafe-reset-all --keep-addr-book --home $HOME/.bcna
 
-  NODE1_IP="95.216.242.82"
+  NODE1_IP="49.12.123.172"
   RPC1="http://$NODE1_IP"
-  P2P_PORT1=36656
-  RPC_PORT1=36657
-
-  NODE2_IP="95.216.242.82"
+  P2P_PORT1=26656
+  RPC_PORT1=26657
+  
+  NODE2_IP="49.12.123.172"
   RPC2="http://$NODE2_IP"
-  RPC_PORT2=36657
-  P2P_PORT2=36656
+  RPC_PORT2=26657
+  P2P_PORT2=26656
 
   #If you want to use a third StateSync Server...
   #DOMAIN_3=seed1.bitcanna.io     # If you want to use domain names
